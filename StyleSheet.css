@@ -1,0 +1,189 @@
+/* Tiny reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+/* Body */
+body {
+    background: #00a8e0;
+    font-family: sans-serif;
+    border-top: 5px solid #00a8e0;
+}
+
+/* Title */
+h1 {
+    color: black;
+    text-align: center;
+    font-family: Helvetica;
+    letter-spacing: 3px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+/* Tasks */
+.tasks {
+    width: 300px;
+    height: 405px;
+    margin: 0 auto;
+    position: relative;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+    background: #008bb9;
+    height: 69px;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #2C3E50;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-indent: 20px;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+label h2 span {
+    display: block;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: #edf7f6;
+}
+
+label:after {
+    content: "\2713";
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+#label-1:checked ~ label[for=label-1] {
+    background: #fd7373; /* Change the background color for the first label */
+    border-bottom: 1px solid #fd5654; /* Change the border color for the first label */
+    color: #ffffff; /* Change the text color for the first label */
+}
+
+#label-1:checked ~ label[for=label-1]:after {
+    opacity: 1;
+}
+
+#label-2:checked ~ label[for=label-2] {
+    background: #ffbc7d; /* Change the background color for the second label */
+    border-bottom: 1px solid #ffbc7a; /* Change the border color for the second label */
+    color: #ffffff; /* Change the text color for the second label */
+}
+
+#label-2:checked ~ label[for=label-2]:after {
+    opacity: 1;
+}
+
+#label-3:checked ~ label[for=label-3] {
+    background: #a6e390; /* Change the background color for the third label */
+    border-bottom: 1px solid #a6e390; /* Change the border color for the third label */
+    color: #ffffff; /* Change the text color for the third label */
+}
+
+#label-3:checked ~ label[for=label-3]:after {
+    opacity: 1;
+}
+
+#label-4:checked ~ label[for=label-4] {
+    background: #60cfff; /* Change the background color for the fourth label */
+    border-bottom: 1px solid #60cfe3; /* Change the border color for the fourth label */
+    color: #ffffff; /* Change the text color for the fourth label */
+}
+
+#label-4:checked ~ label[for=label-4]:after {
+    opacity: 1;
+}
+
+#label-5:checked ~ label[for=label-5] {
+    background: #60cfff; /* Change the background color for the fifth label */
+    border-bottom: 1px solid #60cfe3; /* Change the border color for the fifth label */
+    color: #ffffff; /* Change the text color for the fifth label */
+}
+
+#label-5:checked ~ label[for=label-5]:after {
+    opacity: 1;
+}
+
+/* Submit */
+.submit-button {
+    text-align: center;
+    margin-top: 15px;
+}
+
+button {
+    padding: 20px 40px;
+    background: #000;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-size: 12px;
+    letter-spacing: 3px;
+    position: relative;
+    transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button::after,
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+button::after {
+    width: 30px;
+    height: 1px;
+    background: white;
+    transform: translateX(-3px);
+    margin-top: 0px;
+}
+
+button::before {
+    content: "";
+    transform: rotate(-135deg) translateX(50%);
+    width: 11px;
+    height: 11px;
+    background: transparent;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-top: -1px;
+}
+
+button:hover {
+    padding: 15px 60px 15px 20px;
+}
+
+button:hover::after,
+button:hover::before {
+    opacity: 1;
+    right: 15px;
+}
